@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿PUEDO SER TU NOVIO?</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+    color: #ffd6ec;
+    font-family: 'Brush Script MT', cursive;
+    text-align: center;
+    animation: fadeIn 2s ease-in;
+  }
+
+  h1 {
+    font-size: 3.5em;
+    color: #ff3366;
+    margin-top: 40px;
+    animation: fadeIn 3s ease-in-out;
+  }
+
+  img {
+    width: 300px;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 0 0 20px #ff3366;
+    animation: fadeIn 3s ease-in-out;
+  }
+
+  p {
+    max-width: 600px;
+    margin: 20px auto;
+    font-size: 1.3em;
+    line-height: 1.5;
+    color: #fff0f5;
+    text-shadow: 0 0 10px #ff6699;
+    animation: fadeIn 4s ease-in-out;
+  }
+
+  .boton {
+    display: inline-block;
+    margin: 15px;
+    padding: 12px 25px;
+    font-size: 1.2em;
+    color: white;
+    background: linear-gradient(45deg, #ff3366, #ff6699);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 0 15px #ff6699;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .boton:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px #ff99cc;
+  }
+
+  #mensaje-final {
+    display: none;
+    font-size: 2em;
+    color: #ff99cc;
+    text-shadow: 0 0 20px #ff6699;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: aparecer 2s ease-in-out;
+  }
+
+  @keyframes aparecer {
+    0% {opacity: 0; transform: translate(-50%, -40%);}
+    100% {opacity: 1; transform: translate(-50%, -50%);}
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  .corazon {
+    position: absolute;
+    color: #ff3366;
+    font-size: 20px;
+    animation: flotar 6s linear infinite;
+  }
+
+  @keyframes flotar {
+    0% {transform: translateY(100vh) scale(1);}
+    100% {transform: translateY(-10vh) scale(0.5); opacity: 0;}
+  }
+</style>
+</head>
+<body>
+
+<h1>¿PUEDO SER TU NOVIO?</h1>
+
+<img src="E6978F33-E39A-49CA-A364-23E7B72C6872.jpeg" alt="Nuestra foto">
+
+<p>
+Bueno mi pequeña quería hacerte esto porque te amo mucho y creo que ya estamos listos después de este tiempo que pasamos juntos de volver a intentarlo.  
+La verdad extraño estar con vos, no paro de pensar en vos cada segundo, cada día, cada semana y cada año.  
+En todo momento e instante estoy pensando en vos mi amor.  
+Sé que a veces peleamos por tonteras y nos enojamos, pero siempre sabemos solucionarlo y arreglar las cosas.  
+Por eso quisiera preguntarte si...  
+</p>
+
+<p style="font-size:1.8em; color:#ff99cc;">¿Aceptás a este pibito que te ama con el alma entera y está dispuesto a dar todo por vos?<br>Te amo hermosa 💖🫶🏻</p>
+
+<p style="font-style:italic; color:#ff99cc;">Siempre vas a ser mi lugar seguro 💞</p>
+
+<a class="boton" href="https://www.youtube.com/watch?v=8ZcmTl_1ER8" target="_blank">🎧 Escuchar "Algo Mágico" – Rauw Alejandro</a>
+
+<br>
+
+<button class="boton" onclick="mostrarMensaje()">💖 Tocá aquí si decís que sí 💖</button>
+
+<div id="mensaje-final">Sabía que ibas a decir que sí 😍💞</div>
+
+<p style="margin-top:40px; color:#ff6699;">11/08/2022</p>
+
+<script>
+function crearCorazon() {
+  const corazon = document.createElement("div");
+  corazon.classList.add("corazon");
+  corazon.innerHTML = "❤️";
+  corazon.style.left = Math.random() * 100 + "vw";
+  corazon.style.fontSize = Math.random() * 20 + 10 + "px";
+  document.body.appendChild(corazon);
+
+  setTimeout(() => {
+    corazon.remove();
+  }, 6000);
+}
+
+setInterval(crearCorazon, 300);
+
+function mostrarMensaje() {
+  const mensaje = document.getElementById("mensaje-final");
+  mensaje.style.display = "block";
+
+  for (let i = 0; i < 30; i++) {
+    setTimeout(crearCorazon, i * 100);
+  }
+}
+</script>
+
+</body>
+</html>
